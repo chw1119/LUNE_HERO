@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="Class.cpp" />
     <ClCompile Include="Context.cpp" />
+    <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="LUNE_HERO.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -151,6 +152,8 @@
   <ItemGroup>
     <ClInclude Include="Class.h" />
     <ClInclude Include="Context.h" />
+    <ClInclude Include="EventManager.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="stdafx.h" />

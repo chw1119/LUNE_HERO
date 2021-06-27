@@ -4,6 +4,7 @@
 
 #include <./SDL.h>
 #include "Class.h"
+#include "EventManager.h"
 
 class Context :public Class
 {
@@ -12,6 +13,8 @@ private:
 
 	SDL_Window* window;
 	SDL_GLContext context;
+
+	EventManager* eventManager;
 
 public:
 

@@ -22,6 +22,12 @@
     <Filter Include="헤더 파일\graphics\shaders">
       <UniqueIdentifier>{dc526bfb-9b93-4b96-b5e5-5780cc00620c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\game">
+      <UniqueIdentifier>{de2b27a5-a009-46f8-b62a-c3fadca29de5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\event">
+      <UniqueIdentifier>{a36cc626-4dc5-4452-9e3b-64e741eb8ace}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HERO.cpp">
@@ -39,11 +45,14 @@
     <ClCompile Include="Context.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Class.h">
       <Filter>헤더 파일\standard</Filter>
     </ClInclude>
@@ -53,8 +62,23 @@
     <ClInclude Include="Shader.h">
       <Filter>헤더 파일\graphics\shaders</Filter>
     </ClInclude>
-    <ClInclude Include="Context.h">
+    <ClInclude Include="Window.h">
       <Filter>헤더 파일\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>헤더 파일\game</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>헤더 파일\event</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일\standard</Filter>
+    </ClInclude>
+    <ClInclude Include="Initialize.h">
+      <Filter>헤더 파일\game</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>헤더 파일\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

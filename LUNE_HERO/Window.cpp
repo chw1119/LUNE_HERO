@@ -2,7 +2,6 @@
 
 Window::Window() : xPos(STD_WINDOW_XPOS), yPos(STD_WINDOW_YPOS), xSize(STD_WINDOW_XSIZE), ySize(STD_WINDOW_YSIZE), windowBitFlag(SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE)
 {
-	context = Context();
 	
 
 
@@ -10,7 +9,7 @@ Window::Window() : xPos(STD_WINDOW_XPOS), yPos(STD_WINDOW_YPOS), xSize(STD_WINDO
 
 Window::Window(int xpos, int ypos, int xsize, int ysize) : xPos(xpos), yPos(ypos), xSize(xsize), ySize(ysize), windowBitFlag(SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE)
 {
-	context = Context();
+
 }
 
 Window::~Window()

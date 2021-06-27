@@ -64,6 +64,7 @@ public:
 	int GetWindowBitFlag() const;
 	const Context& GetContext() const;
 
+
 public:
 
 	static int GetNumVideoDisplays();

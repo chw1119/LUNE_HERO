@@ -16,7 +16,14 @@ private:
 	float xsize;
 	float ysize;
 
+	float scale;
+
+	float angle;
+
 	GLuint vertexBufferId;
+	GLuint indexBufferId;
+
+
 	Shader shaderProgram;
 
 	Context* context;
@@ -31,6 +38,8 @@ private:
 public:
 
 	Sprite();
+
+	Sprite(float xpos, float ypos, float xsize, float ysize, float scale, float angle);
 
 	virtual void Bind();
 
