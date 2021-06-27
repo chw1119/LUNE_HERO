@@ -3,6 +3,18 @@
 void Sprite::InitGraphics()
 {
 	glGenBuffers(1, &this->vertexBufferId);
+	glBindBuffer(GL_VERTEX_ARRAY, this->vertexBufferId);
+
+	const GLfloat vertexData[3 * 6] = 
+	{
+	
+	};
+
+
+	const GLuint indexData[4]       = 
+	{
+	
+	};
 
 }
 

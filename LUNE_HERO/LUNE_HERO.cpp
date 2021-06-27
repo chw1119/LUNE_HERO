@@ -9,7 +9,7 @@ const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
 
 SDL_Window* window = nullptr;
-SDL_GLContext context = NULL;
+SDL_GLContext context = nullptr;
 SDL_Renderer* renderer = nullptr;
 
 void Init() 

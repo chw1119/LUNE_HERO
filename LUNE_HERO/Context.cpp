@@ -20,7 +20,20 @@ SDL_GLContext Context::GetGLContext() const
 	return context;
 }
 
+void Context::SetWindow(SDL_Window* window)
+{
+	this->window = window;
+}
+
+void Context::SetGLContext(SDL_GLContext context)
+{
+	this->context = context;
+
+	MakeCurrent();
+}
+
 inline void Context::MakeCurrent() const
 {
 	SDL_GL_MakeCurrent(window, context);
+
 }

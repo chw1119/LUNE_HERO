@@ -21,6 +21,9 @@ public:
 	SDL_Window*   GetWindow() const;
 	SDL_GLContext GetGLContext() const;
 
+	void SetWindow(SDL_Window* window);
+	void SetGLContext(SDL_GLContext context);
+
 	inline void MakeCurrent() const;
 };
 
