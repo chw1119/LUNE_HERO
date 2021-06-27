@@ -28,7 +28,7 @@ void Sprite::InitGraphics()
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData),indexData,GL_STATIC_DRAW);
 
 	shaderProgram = Shader("./resource/shader/vertex/vStdShader.glsl","./resource/shader/fragment/fStdShader.glsl");
-
+	//glBindAttribLocation(shaderProgram.ID, 0, "aPos");
 
 }
 
@@ -60,7 +60,7 @@ void Sprite::Draw()
 {
 	Bind();
 
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }
 
 void Sprite::SetShaderProgram(Shader program)

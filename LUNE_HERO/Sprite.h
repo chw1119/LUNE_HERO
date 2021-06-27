@@ -32,7 +32,7 @@ private:
 private:
 	//initialize objects
 
-	void InitGraphics();
+	virtual void InitGraphics();
 
 
 public:
