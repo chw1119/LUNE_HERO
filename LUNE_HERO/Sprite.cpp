@@ -16,6 +16,14 @@ void Sprite::InitGraphics()
 	};
 
 	glGenBuffers(1, &this->vertexBufferId);
+	glBindBuffer(GL_VERTEX_ARRAY, this->vertexBufferId);
+
+	const GLuint indexData[6] =
+	{
+		0,1,2,0,2,3
+	};
+
+	glGenBuffers(1, &this->vertexBufferId);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vertexBufferId);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
 

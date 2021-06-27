@@ -1,6 +1,6 @@
 #version 330 core
 layout (location = 0) in vec3 aPos; // 위치 변수는 attribute position 0을 가집니다.
-  
+
 out vec4 vertexColor; // fragment shader를 위한 컬러 출력을 지정
 
 void main()

@@ -64,6 +64,7 @@ public:
 	const class Context& GetContext() const;
 
 
+
 public:
 
 	static int GetNumVideoDisplays();
