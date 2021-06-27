@@ -60,7 +60,7 @@ Shader::Shader(const GLchar* vertexPath, const GLchar* fragmentPath)
     // Fragment shader도 마찬가지
 
 
-    fragment = glCreateShader(GL_VERTEX_SHADER);
+    fragment = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragment, 1, &fShaderCode, NULL);
     glCompileShader(fragment);
     // 오류가 발생한다면 컴파일 오류를 출력
@@ -78,7 +78,7 @@ Shader::Shader(const GLchar* vertexPath, const GLchar* fragmentPath)
     glLinkProgram(ID);
     // 오류가 발생한다면 링킹 오류를 출력
     glGetProgramiv(ID, GL_LINK_STATUS, &success);
-    if (!success)
+        if (!success)
     {
         glGetProgramInfoLog(ID, 512, NULL, infoLog);
         std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;

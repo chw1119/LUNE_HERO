@@ -3,7 +3,7 @@
 
 #include "Class.h"
 
-#include <./glew.h>.
+#include <glew.h>
 
 #include <string>
 #include <fstream>

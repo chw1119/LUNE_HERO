@@ -2,15 +2,12 @@
 
 Window::Window() : xPos(STD_WINDOW_XPOS), yPos(STD_WINDOW_YPOS), xSize(STD_WINDOW_XSIZE), ySize(STD_WINDOW_YSIZE), windowBitFlag(SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE)
 {
-	context = Context();
-	
-
-
+	context = class Context();
 }
 
 Window::Window(int xpos, int ypos, int xsize, int ysize) : xPos(xpos), yPos(ypos), xSize(xsize), ySize(ysize), windowBitFlag(SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE)
 {
-	context = Context();
+	context = class Context();
 }
 
 Window::~Window()
@@ -46,7 +43,7 @@ void Window::SetWindowRefreshRate(int rate)
 	refreshRate = rate;
 }
 
-void Window::SetContext(Context& context)
+void Window::SetContext(class Context& context)
 {
 	this->context = context;
 
@@ -55,7 +52,7 @@ void Window::SetContext(Context& context)
 
 void Window::SyncWindowDatas()
 {
-	auto temp = SDL_DisplayMode();
+	SDL_DisplayMode temp;
 
 	temp.w = xSize;
 	temp.h = ySize;
@@ -94,7 +91,7 @@ int Window::GetWindowBitFlag() const
 
 }
 
-const Context& Window::GetContext() const
+const class Context& Window::GetContext() const
 {
 	return context;
 }

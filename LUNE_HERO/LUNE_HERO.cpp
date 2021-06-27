@@ -142,14 +142,10 @@ inline void loop()
         
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glBegin(GL_QUADS);
+        auto sprite = new Sprite();
 
-        glVertex2f(-0.5f, -0.5f);
-        glVertex2f(0.5f, -0.5f);
-        glVertex2f(0.5f, 0.5f);
-        glVertex2f(-0.5f, 0.5f);
-
-        glEnd();
+        sprite->Bind();
+        sprite->Draw();
 
         SDL_GL_SwapWindow(window);
 

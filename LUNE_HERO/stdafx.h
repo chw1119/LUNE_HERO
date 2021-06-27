@@ -21,6 +21,13 @@
 #include "Class.h"
 #include "Sprite.h"
 
+#include "Context.h"
+#include "Window.h"
+
+#include "Initialize.h"
+#include "game.h"
+
+
 #pragma comment(lib, "Opengl32.lib")
 #pragma comment(lib, "glu32.lib")
 #pragma comment(lib, "glew32.lib")

@@ -18,7 +18,6 @@
 #include <utility>
 
 #include <SDL.h>
-#include <sdl_opengl.h>
 
 class Window : public Class
 {
@@ -34,7 +33,7 @@ private:
 
 	int refreshRate;
 
-	Context context;
+	class Context context;
 	
 
 public:
@@ -53,7 +52,7 @@ public:
 
 	void SetWindowRefreshRate(int rate);
 
-	void SetContext(Context& context);
+	void SetContext(class Context& context);
 
 	void SyncWindowDatas();
 
@@ -62,7 +61,8 @@ public:
 	std::pair<int, int> GetWindowPos();
 
 	int GetWindowBitFlag() const;
-	const Context& GetContext() const;
+	const class Context& GetContext() const;
+
 
 public:
 
