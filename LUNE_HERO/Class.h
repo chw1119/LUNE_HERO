@@ -12,7 +12,7 @@ private:
 public:
 
 	Class();
-	virtual ~Class();
+	~Class();
 
 
 	virtual int GetClassId() const;

@@ -1,5 +1,7 @@
 #include "Shader.h"
 
+#include <windows.h>
+
 Shader::Shader()
 {
 
@@ -88,6 +90,12 @@ Shader::Shader(const GLchar* vertexPath, const GLchar* fragmentPath)
     glDeleteShader(vertex);
     glDeleteShader(fragment);
 }
+
+Shader::~Shader()
+{
+    glDeleteProgram(ID);
+}
+
 
 void Shader::Use()
 {

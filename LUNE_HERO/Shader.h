@@ -25,6 +25,9 @@ public:
 
     Shader(const GLchar* vertexPath, const GLchar* fragmentPath);
 
+    virtual ~Shader();
+
+
     void Use();
 
     void SetBool(const std::string& name, bool value) const;

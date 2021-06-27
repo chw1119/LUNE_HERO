@@ -2,13 +2,13 @@
 
 Class::Class()
 {
-    std::cout << "overrided";
+    //std::cout << "overrided";
 
 }
 
 Class::~Class()
 {
-    std::cout << GetClassId() << " deleted";
+    //std::cout << GetClassId() << " deleted";
 }
 
 int Class::GetClassId() const

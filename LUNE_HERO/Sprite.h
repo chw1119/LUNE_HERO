@@ -23,16 +23,14 @@ private:
 	GLuint vertexBufferId;
 	GLuint indexBufferId;
 
-
-	Shader shaderProgram;
-
 	Context* context;
+	Shader* shaderProgram;
 
 
 private:
 	//initialize objects
 
-	virtual void InitGraphics();
+	virtual void InitGraphics(Shader* shader, Context* ctx);
 
 
 public:
@@ -40,6 +38,9 @@ public:
 	Sprite();
 
 	Sprite(float xpos, float ypos, float xsize, float ysize, float scale, float angle);
+	Sprite(float xpos, float ypos, float xsize, float ysize, float scale, float angle, Shader* shader, Context* ctx);
+
+	~Sprite();
 
 	virtual void Bind();
 
@@ -47,6 +48,6 @@ public:
 
 	virtual void Draw();
 
-	void SetShaderProgram(Shader program);
+	void SetShaderProgram(Shader* program);
 
 };

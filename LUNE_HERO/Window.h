@@ -33,7 +33,7 @@ private:
 
 	int refreshRate;
 
-	class Context context;
+	Context context;
 	
 
 public:

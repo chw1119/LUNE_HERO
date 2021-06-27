@@ -8,94 +8,9 @@
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
 
-SDL_Window* window = nullptr;
-SDL_GLContext context = nullptr;
-SDL_Renderer* renderer = nullptr;
+Context* ctx;
 
-void Init() 
-{
-    if(SDL_Init(SDL_INIT_EVERYTHING) < 0 )
-    {
-        std::cout << "에러 발생";
-        exit(1);
-    }
-
-
-    bool success = true;
-
-    const int SCREEN_WIDTH = 800;
-    const int SCREEN_HEIGHT = 600;
-
-    window = SDL_CreateWindow("LUNE HEROS", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
-
-    context = SDL_GL_CreateContext(window);
-
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
-    SDL_GL_MakeCurrent(window, context);
-
-
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-
-    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
-    if (renderer == NULL)
-    {
-        printf("OpenGL context could not be created! SDL Error: %s\n", SDL_GetError());
-        success = false;
-    }
-    else
-    {
-        //Initialize GLEW
-        glewExperimental = GL_TRUE;
-        GLenum glewError = glewInit();
-        if (glewError != GLEW_OK)
-        {
-            printf("Error initializing GLEW! %s\n", glewGetErrorString(glewError));
-        }
-
-        //Use Vsync
-        if (SDL_GL_SetSwapInterval(1) < 0)
-        {
-            printf("Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError());
-        }
-
-        //Initialize OpenGL
-       
-    }
-
-
-    GLenum error = GL_NO_ERROR;
-
-    //Initialize Projection Matrix
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-
-    //Check for error
-    error = glGetError();
-    if (error != GL_NO_ERROR)
-    {
-        printf("Error initializing OpenGL! %s\n", gluErrorString(error));
-        success = false;
-    }
-
-    //Initialize Modelview Matrix
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-
-    //Check for error
-    error = glGetError();
-    if (error != GL_NO_ERROR)
-    {
-        printf("Error initializing OpenGL! %s\n", gluErrorString(error));
-        success = false;
-    }
-
-    glClearColor(0.f, 0.f, 0.f, 1.f);
-
-}
+static float a = 0;
 
 inline void loop() 
 {
@@ -121,11 +36,11 @@ inline void loop()
                     FullScreen = !FullScreen;
                     if (FullScreen)
                     {
-                        SDL_SetWindowFullscreen(window, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP);
+                        SDL_SetWindowFullscreen(ctx->GetWindow(), SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP);
                     }
                     else
                     {
-                        SDL_SetWindowFullscreen(window, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+                        SDL_SetWindowFullscreen(ctx->GetWindow(), SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
                     }
                     break;
                 default:
@@ -144,11 +59,13 @@ inline void loop()
 
         auto sprite = new Sprite();
 
-        sprite->Bind();
         sprite->Draw();
 
-        SDL_GL_SwapWindow(window);
 
+
+        SDL_GL_SwapWindow(ctx->GetWindow());
+
+        delete sprite;
         SDL_Delay(1000 / 60);
     }
 }
@@ -159,8 +76,9 @@ using namespace std;
 
 int main(int argc, char* args[])
 {
-
-    Init();
+    Context context;
+    Init::Init(context);
+    ctx = &context;
     loop();
 
     return 0;
